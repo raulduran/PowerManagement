@@ -17,8 +17,8 @@ cordova plugin rm org.apache.cordova.plugins.PowerManagement
 
 Acquire
 
-cordova.plugins.PowerManagement.acquire(onSuccess, onError);
+cordova.plugins.powerManagement.acquire(onSuccess, onError);
 
 Release
 
-cordova.plugins.PowerManagement.release(onSuccess, onError);
+cordova.plugins.powerManagement.release(onSuccess, onError);

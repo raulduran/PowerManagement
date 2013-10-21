@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+    id="org.apache.cordova.plugins.PowerManagement"
+    version="0.1.0">
+
+    <name>PowerManagement</name>
+
+    <engines>
+        <engine name="cordova" version=">=2.2.0" />
+    </engines>
+
+    <js-module src="www/powermanagement.js" name="PowerManagement">
+        <clobbers target="cordova.plugins.powerManagement" />
+    </js-module>
+        
+    <!-- ios -->
+    <platform name="ios">            
+        <config-file target="config.xml" parent="/widget">
+            <feature name="PowerManagement">
+                <param name="ios-package" value="PowerManagement" /> 
+            </feature>
+        </config-file>
+    
+        <header-file src="src/ios/PowerManagement.h" />
+	    <source-file src="src/ios/PowerManagement.m" />   	
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+        <source-file src="src/android/PowerManagement.java" target-dir="src/org/apache/cordova/plugin" />
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="PowerManagement">
+                <param name="android-package" value="org.apache.cordova.plugin.PowerManagement" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+        </config-file>
+
+    </platform>       
+
+</plugin>
